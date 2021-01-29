@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# acn_git_hooks_deploy_id ed99030d5961c307087284267e88e09a1d9baa1b
+export CONFIG_DIRECTORY='/Users/nitin.al.gupta/.acn-security-tools/config'
+if [[ $(uname) == "MINGW"* ]]
+then
+  py .git/hooks/detect_remote
+  py .git/hooks/detect_secret
+else
+  python .git/hooks/detect_remote
+  python .git/hooks/detect_secret
+fi
